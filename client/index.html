@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Awesome Friends</title>
+    <!-- Angular from bower_components, othersiwe find the CDN -->
+    <!-- Files frlom bower_components and client folders can only be server if the static folders are beign server on teh server wiht teh app.use() -->
+    <script src="angular/angular.js" charset="utf-8"></script>
+    <script src="angular-route/angular-route.js" charset="utf-8"></script>
+    <!-- end bower components -->
+
+    <!-- START your angular application code -->
+    <script src="app.js" charset="utf-8"></script>
+    <script src="controllers/new_controller.js" charset="utf-8"></script>
+    <script src="controllers/edit_controller.js" charset="utf-8"></script>
+    <!-- end your angular application code -->
+
+
+  </head>
+
+<!-- don't forget to define your ng-app
+The name in quotes must match the name you have declared in your app.js file's angular.module() -->
+
+  <body ng-app="app">
+<!-- links to your new and edit pages here. Review Angular Partials if you've forgotten -->
+<nav>
+    <!--
+    There links are not real routes. (note the # in teh fornt), but rather Angular routes. This is a singe page app we wer are still starying on teh same index.html page. What does change is that we are requesting the partial from teh server and that partial is placed into the slement with ng-view = "". -->
+    <a href="/#/new">Create</a>
+    <a href="/#/edit/lookAtUrl">Edit Friends</a>
+
+</nav>
+      <!-- not so subtel hint - ng-view???-->
+      <div ng-view="">
+
+      </div>
+  </body>
+</html>
